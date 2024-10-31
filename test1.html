@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Web Programlama Testi</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #f6d365, #fda085); /* Pink, light pink, yellow, and orange gradient */
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            color: #333;
+        }
+
+        
+        h1 {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #f77f00; 
+        }
+
+        
+        label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-top: 15px;
+        }
+
+        
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #ff9a9e; 
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+            font-size: 1em;
+        }
+
+        
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+            transform: scale(1.1);
+        }
+
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff9a9e; 
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        
+        input[type="submit"]:hover {
+            background-color: #f77f00; 
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="" method="post">
+        <h1>Web Programcılığı Testi</h1>
+
+        
+        <label for="q1">JavaScript hangi yıl icat edilmiştir?</label>
+        <input type="text" id="q1" name="q1" required>
+
+       
+        <label for="q2">HTML hangi amaçla kullanılır?</label>
+        <input type="radio" id="structure" name="q2" value="Yapılandırma" required>
+        <label for="structure">Web Sayfası Yapılandırması</label>
+        <input type="radio" id="design" name="q2" value="Tasarım">
+        <label for="design">Tasarım</label>
+
+
+        <label for="q3">CSS’de, font büyüklüğünü değiştirmek için hangi özellik kullanılır?</label>
+        <select id="q3" name="q3" required>
+            <option value="font-style">font-style</option>
+            <option value="font-size">font-size</option>
+            <option value="font-weight">font-weight</option>
+        </select>
+
+        
+        <label>HTML5 ile gelen yeni etiketler hangileridir?</label>
+        <input type="checkbox" id="video" name="q4[]" value="video">
+        <label for="video">video</label>
+        <input type="checkbox" id="article" name="q4[]" value="article">
+        <label for="article">article</label>
+        <input type="checkbox" id="header" name="q4[]" value="header">
+        <label for="header">header</label>
+        <input type="checkbox" id="blink" name="q4[]" value="blink">
+        <label for="blink">blink</label>
+
+        
+        <label for="q5">Bir web sayfasına interaktif özellikler eklemek için hangi dil kullanılır?</label>
+        <textarea id="q5" name="q5" rows="4" required></textarea>
+
+        
+        <input type="submit" value="Testi Bitir">
+    </form>
+</body>
+</html>
