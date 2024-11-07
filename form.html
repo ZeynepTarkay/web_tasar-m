@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı İşlemleri</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Verdana', sans-serif;
+            background-color: #e0f7fa;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            display: none;
+            width: 320px;
+        }
+        form.active {
+            display: block;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 4px;
+            cursor: pointer;
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #00796b;
+        }
+        input[type="submit"] {
+            background-color: #00796b; 
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #004d40; 
+        }
+    </style>
+</head>
+<body>
+
+   
+    <form id="registerForm" class="active" action="" method="post">
+        <h2>Yeni Üyelik</h2>
+        <label for="name">Ad Soyad:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Şifre:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="birthdate">Doğum Tarihi:</label><br>
+        <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+        <label>Cinsiyet:</label><br>
+        <input type="radio" id="male" name="gender" value="Erkek">
+        <label for="male">Erkek</label><br>
+        <input type="radio" id="female" name="gender" value="Kadın">
+        <label for="female">Kadın</label><br>
+        <input type="radio" id="other" name="gender" value="diger">
+        <label for="female">Diğer</label><br><br>
+
+        <label for="city">Şehir:</label><br>
+        <select id="city" name="city">
+            <option value="kayseri">Kayseri</option>
+            <option value="ankara">Ankara</option>
+            <option value="kastamonu">Kastamonu</option>
+        </select><br><br>
+
+        <label>Hobileriniz:</label><br>
+        <input type="checkbox" id="hobby1" name="hobbies" value="Egitim">
+        <label for="hobby1">Kod Yazmak</label><br>
+        <input type="checkbox" id="hobby2" name="hobbies" value="Resim">
+        <label for="hobby2">Resim Çizme</label><br>
+        <input type="checkbox" id="hobby3" name="hobbies" value="oyun">
+        <label for="hobby3">Oyun Oynamak</label><br><br>
+
+        <input type="submit" value="Kaydı Tamamla">
+
+        <div class="button-container">
+            <button type="button" onclick="toggleVisibility('loginForm')">Kullanıcı Girişi</button>
+            <button type="button" onclick="toggleVisibility('forgotPasswordForm')">Şifre Yardımı</button>
+        </div>
+    </form>
+
+    
+    <form id="loginForm" action="" method="post">
+        <h2>Kullanıcı Girişi</h2>
+        <label for="loginEmail">Email:</label><br>
+        <input type="email" id="loginEmail" name="loginEmail" required><br><br>
+
+        <label for="loginPassword">Şifre:</label><br>
+        <input type="password" id="loginPassword" name="loginPassword" required><br><br>
+
+        <input type="submit" value="Giriş Yap">
+
+        <div class="button-container">
+            <button type="button" onclick="toggleVisibility('registerForm')">Yeni Üyelik</button>
+            <button type="button" onclick="toggleVisibility('forgotPasswordForm')">Şifre Yardımı</button>
+        </div>
+    </form>
+
+    <form id="forgotPasswordForm" action="" method="post">
+        <h2>Şifre Yardımı</h2>
+        <label for="resetEmail">Email:</label><br>
+        <input type="email" id="resetEmail" name="resetEmail" required><br><br>
+
+        <input type="submit" value="Yenile">
+
+        <div class="button-container">
+            <button type="button" onclick="toggleVisibility('registerForm')">Yeni Üyelik</button>
+            <button type="button" onclick="toggleVisibility('loginForm')">Kullanıcı Girişi</button>
+        </div>
+    </form>
+
+    <script>
+        function toggleVisibility(formId) {
+            document.querySelectorAll('form').forEach(form => form.classList.remove('active'));
+            document.getElementById(formId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
