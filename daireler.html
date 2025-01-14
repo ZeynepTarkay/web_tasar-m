@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10x10 Daire Çizimi</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #FFA500; 
+            font-family: Arial, sans-serif;
+        }
+
+        canvas {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const rows = 10;
+        const cols = 10;
+        const circleSize = canvas.width / rows / 2;
+
+        const colors = [
+            "#FF5733", "#33FF57", "#3357FF", "#FF33A6",
+            "#FFBD33", "#85FF33", "#33FFDA", "#9A33FF",
+            "#FF3333", "#33FFD1"
+        ];
+
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < cols; j++) {
+                const x = i * circleSize * 2 + circleSize;
+                const y = j * circleSize * 2 + circleSize;
+
+               
+                ctx.beginPath();
+                ctx.arc(x, y, circleSize - 5, 0, Math.PI * 2);
+                ctx.fillStyle = colors[(i + j) % colors.length];
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+    </script>
+</body>
+</html>
