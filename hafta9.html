@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Webpage</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .images {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+        }
+        .images img {
+            width: 30%;
+            display: none;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        .controls button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="images">
+        <img id="image1" src="image1.jpg" alt="Image 1">
+        <img id="image2" src="image2.jpg" alt="Image 2">
+        <img id="image3" src="image3.jpg" alt="Image 3">
+    </div>
+    <div class="controls">
+        <button onclick="toggleImage('image1')">Toggle Image 1</button>
+        <button onclick="toggleImage('image2')">Toggle Image 2</button>
+        <button onclick="toggleImage('image3')">Toggle Image 3</button>
+    </div>
+
+    <script>
+        
+        const backgrounds = [
+            'bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg', 'bg5.jpg',
+            'bg6.jpg', 'bg7.jpg', 'bg8.jpg', 'bg9.jpg', 'bg10.jpg'
+        ];
+
+        
+        function setRandomBackground() {
+            const randomIndex = Math.floor(Math.random() * backgrounds.length);
+            document.body.style.backgroundImage = `url(${backgrounds[randomIndex]})`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+        }
+
+        
+        function toggleImage(imageId) {
+            const img = document.getElementById(imageId);
+            img.style.display = img.style.display === 'none' || img.style.display === '' ? 'block' : 'none';
+        }
+
+        
+        setRandomBackground();
+    </script>
+</body>
+</html>
